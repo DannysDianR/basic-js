@@ -32,7 +32,10 @@ Grade D: Score antara 54 - 40
 Grade E: Score antara 40 - 25
 */
 
-// Soal A.
+/*Soal A.
+ Bilangan Genap adalah bilangan yang habis dibagi 2 atau jika dimodulus maka hasilnya 0
+Bilangan Ganjil adalah bilangan yang tidak habis dibagi 2 atau jika dimodulus maka hasilnya 1
+
 var number = 5;
 
 if (number % 2 == 1) {
@@ -40,7 +43,10 @@ if (number % 2 == 1) {
 } else {
   console.log("Angka " + number + " merupakan bilangan genap");
 }
+*/
 
+/*
+Soal B.
 var grade = 12;
 
 if (grade <= 100 && grade >= 85) {
@@ -53,4 +59,30 @@ if (grade <= 100 && grade >= 85) {
   console.log("Selamat kamu mendapatkan nilai D");
 } else if (grade <= 39 && grade >= 0) {
   console.log("Selamat kamu mendapatkan nilai E");
+}*/
+
+// Soal C
+
+var totalHarga = 150000;
+var diskon = "DiscountHarbolnas";
+var keseluruhanHarga;
+
+if (diskon == "Discount10%") {
+  if (totalHarga >= 500000) {
+    keseluruhanHarga = totalHarga * 0.1;
+    console.log(totalHarga - keseluruhanHarga);
+  } else if (totalHarga >= 300000 && totalHarga <= 500000) {
+    keseluruhanHarga = totalHarga * 0.05;
+    console.log(totalHarga - keseluruhanHarga);
+  } else if (totalHarga < 300000) {
+    keseluruhanHarga = totalHarga * 0.025;
+    console.log(totalHarga - keseluruhanHarga);
+  }
+} else if (diskon == "DiscountHarbolnas") {
+  if (totalHarga >= 250000) {
+    keseluruhanHarga = totalHarga * 0.15;
+    console.log(totalHarga - keseluruhanHarga);
+  } else if (totalHarga < 250000) {
+    console.log(totalHarga);
+  }
 }
