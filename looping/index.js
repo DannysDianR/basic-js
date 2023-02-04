@@ -119,7 +119,7 @@ if (countX === countO) {
 }
 */
 
-/*Study Case 6
+/*Study Case 6 [Contoh soal gak bisa gw tebak]
 
 Cek apakah sebuah bilangan adalah prima atau tidak
 
@@ -158,4 +158,57 @@ if (factor === 2) {
 //Ternary (Lebih dipersingkat true falsenya saja)
 
 factor === 2 ? console.log(true) : console.log(false);
+*/
+
+/*Study Case 7 [Contoh soal gak bisa gw tebak]
+  Print Persegi Panjang
+
+  Contoh:
+  var n = 5
+  var m = 3;
+
+  Result:
+  #####
+  #####
+  #####
+
+  Jawaban:
+  var n = 5; // height
+  var m = 3; // width
+  var temp = "";
+
+  for (var i = 0; i < m; i++) {
+    for (var j = 0; j < n; j++) {
+      temp += "#";
+    } //Ketika di for ini, maka kamu bacanya mengulang sampai kondisi j-nya terpenuhi
+    console.log(temp);
+    temp = ""; //Agar tempnya bisa kosong lagi dan melakukan hal yg sama, yaitu membuat * secara horizontal
+  }
+*/
+
+/*Study Case 8 [Contoh soal gak bisa gw tebak]
+
+Print Segitiga Siku Siku
+var n = 5
+
+Result:
+#
+##
+###
+####
+#####
+
+
+Jawaban:
+var n = 5;
+var temp = "";
+
+for (var i = 0; i < n; i++) {
+  for (var j = 0; j <= i; j++) {
+    temp += "#";
+  } //BACA KONDISI LOOPNYA, Kalo dia gak ngeloop jangan lupa balik ke for awal
+  console.log(temp);
+  temp = "";
+}
+
 */
