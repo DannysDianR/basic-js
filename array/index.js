@@ -115,22 +115,37 @@ Result:
 */
 
 //KONDISI TERAKHIR NIH GAK NGERTI
-// let pantun = "Makan siang bareng temen cakep";
+let pantun = "Makan siang bareng temen cakep";
+//            0123456789012345678901234567890
 
-// let temp = "";
-// let tempArray = [];
+let temp = "";
+let tempArray = [];
 
-// for (let i = 0; i < pantun.length; i++) {
-//   if (pantun[i] !== " ") {
-//     temp += pantun[i];
-//   } else {
-//     tempArray.push(temp);
-//     temp = "";
-//   }
+for (let i = 0; i < pantun.length; i++) {
+  if (pantun[i] !== " ") {
+    temp += pantun[i];
+  } else {
+    tempArray.push(temp);
+    temp = "";
+  }
+  /*Kenapa hasilnya string? Karena ketika di push kedalam tempArray, bentuknya sudah menjadi 1 string.
+    Contoh: index = 0,1,2,3,4
+            temp  = m,a,k,a,n
 
-//   if (i === pantun.length - 1) {
-//     tempArray.push(temp);
-//     temp = "";
-//   }
-// }
-// console.log(tempArray);
+            ketika bertemu " " (Dari soal), maka akan dilakukan aksi yaitu tempArray.push(temp); 
+                                            yg berarti temp ngepush nilai/value yg ada kedalam 
+                                            variable tempArray.
+
+                                            Maka temp = m,a,k,a,n ini bakal ke push dan menjadi string secara langsung.
+
+
+  */
+
+  //Kondisi jika [i] sudah mencapai [i] yang terakhir
+  //Bacanya [i]/index memang dimulai dari 0, tetapi .length selalu dihitung mulai dari 1
+  if (i === pantun.length - 1) {
+    tempArray.push(temp);
+    temp = "";
+  }
+}
+console.log(tempArray);
