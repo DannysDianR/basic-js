@@ -41,6 +41,7 @@ console.log(+temp);
 
   // Kenapa sih harus di inisialisasi seperti dibawah ini? Kenapa gak langsung di console.log aja???
   // Karena biar rapih dicodingan dan bisa dipanggil lagi di function tersebut, dan juga readability
+  
   let mean = total / stats.length;
 
 
