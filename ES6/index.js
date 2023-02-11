@@ -152,18 +152,34 @@ let items = [
  */
 const getItems = (items) => {
   console.log("Fruit List:");
-  items.forEach((items) => {
-    if (items.isSold === true) {
+  items.forEach((item) => {
+    if (item.isSold === true) {
       console.log(
-        `${items.id}. [X] ${items.name} ${items.type}, Rp. ${items.price}, ${items.stock} pcs`
+        `${item.id}. [X] ${item.name} ${item.type}, Rp. ${item.price}, ${item.stock} pcs`
       );
     } else {
       console.log(
-        `${items.id}. [ ] ${items.name} ${items.type}, Rp. ${items.price}, ${items.stock} pcs`
+        `${item.id}. [ ] ${item.name} ${item.type}, Rp. ${item.price}, ${item.stock} pcs`
       );
     }
   });
 };
+
+/* Versi kalau menggunakan Destruction Object
+  Buat ngapus item. , tinggal block si item., lalu di ctrl + d
+
+ const getItems = (items) => {
+  console.log("Fruit List:");
+  items.forEach((item) => {
+    const { id, name, type, price, stock, isSold } = item;
+    if (isSold === true) {
+      console.log(`${item.id}. [X] ${name} ${type}, Rp. ${price}, ${stock} pcs`);
+    } else {
+      console.log(`${id}. [ ] ${name} ${type}, Rp. ${price}, ${stock} pcs`);
+    }
+  });
+}; 
+ */
 
 getItems(items);
 
