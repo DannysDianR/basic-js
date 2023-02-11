@@ -42,7 +42,7 @@ let book = ["JS for dummies", "learning", 150000,5,true]
 // console.log(bookObject(file));
 
 const countVote = (votes) => {
-  // code here
+  // object
   let result = {};
 
   if (votes.length === 0) {
@@ -56,7 +56,9 @@ const countVote = (votes) => {
     } else {
       result[votes[i]] += 1;
     }
+    // console.log(result[votes[i]]);
   }
+  console.log(result);
 
   let winner = 0;
   let winnerKey = "";
@@ -66,7 +68,7 @@ const countVote = (votes) => {
   */
   for (let key in result) {
     /*Kondisinya
-      Jika winner < vincent[3]
+      Jika winner < result[vincent]
       Jika 0 < vincent[3], maka jalankan kondisinya
     */
     if (winner < result[key]) {
@@ -81,17 +83,22 @@ const countVote = (votes) => {
   return `Pemenang adalah ${winnerKey} dengan ${winner} suara.`;
 };
 
+let arr = ["vincent"];
 //Test Case
 console.log(
+  //jadi object ini gak make index, tapi patokannya berupa key. Kalau dikasus ini adalah string.
+  //key disini
   countVote([
     "vincent",
-    "ncent",
+    "vincent",
     "vincent",
     "james",
     "ncent",
+    "ncent",
     "james",
+    "vincent",
     "vincent",
   ])
 );
 
-console.log(countVote([]));
+// console.log(countVote([]));
