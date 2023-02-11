@@ -150,6 +150,8 @@ let items = [
  * 1. [X] Envy USA Apple, Rp. 50000, 50 pcs
  * 2. [] Fresh Ponkan Orange, Rp. 35000, 50 pcs
  */
+
+/*Get Items Function*/
 const getItems = (items) => {
   console.log("Fruit List:");
   items.forEach((item) => {
@@ -164,6 +166,83 @@ const getItems = (items) => {
     }
   });
 };
+
+/* Get Items Call
+  getItems(items); */
+getItems(items);
+
+/*Add Items Function*/
+
+// (...params) = Tujuannya kalau parameternya banyak, bisa kamu tulis semua param sepert (a,b,c,dll)
+const addItem = (...params) => {
+  const [name, type, price, stock] = params;
+
+  // lastIndex = mengambil index yg dari length item dikurang 1, contoh. Length = 2, maka: 2 - 1 = 1, maka yg diambil yg index [1]
+  let lastIndex = items.length - 1;
+
+  // id = mengambil data dari items yang dari Last Index (berupa data idnya) + 1, contoh: last index = 1, maka data yg diambil = 2, maka let id = 2+1 = 3
+  let id = items[lastIndex].id + 1;
+
+  let tempObj = {
+    id,
+    name,
+    type,
+    price,
+    stock,
+    isSold: false,
+  };
+  /*console.log disini Ngecek datanya terbuat atau tidak
+  console.log(tempObj);*/
+
+  //Tujuan push disini agar data yg terbuat di tempObj ini bisa dimasukan kedalam Object items
+  items.push(tempObj);
+
+  console.log(`${name} has been added to the list`);
+};
+
+/* Add Item Call
+  addItem("Melon Madu", "Melon", 27500, 15); */
+
+/*Delete Items Function*/
+
+const deleteItem = (id) => {
+  // Logikanya = items.filter ini memilih item.id yg bukan id yg dipilih, lalu id yg tidak dipilih nanti dimasukan kembalik ke Object Items.
+  items = items.filter((item) => item.id !== id);
+  console.log(`Fruit id "${id}" has been deleted`);
+};
+
+/* Delete Item Call
+  deleteItem(2); */
+
+//MASIH SALAH
+const updateItem = (...params) => {
+  const [id, name, type, price, stock] = params;
+  //items.map tujuannya untuk memproses if, operasi logic, for, dll.
+  items = items.map((item) => {
+    if (item.id === id) {
+      item.name = name;
+      item.type = type;
+      item.price = price;
+      item.stock = stock;
+    }
+    return item;
+  });
+  console.log(`Fruit id "${id}" has been updated`);
+};
+
+//MASIH SALAH
+const changeStatus = (id) => {
+  items = items.map((item) => {
+    if (item.id === id) {
+      item.isSold != item.isSold;
+    }
+    return item;
+  });
+  console.log(`Fruit id "${id}" has been changed`);
+  console.log("Fruit id " + id + " has been changed");
+};
+
+changeStatus(1);
 
 /* Versi kalau menggunakan Destruction Object
   Buat ngapus item. , tinggal block si item., lalu di ctrl + d
@@ -180,8 +259,6 @@ const getItems = (items) => {
   });
 }; 
  */
-
-getItems(items);
 
 /*Destructuring Array dan Object
 Kalo Array asalkan ngurut, penamaannya bisa bebas dan tidak perlu khawatir (Contoh: let [a,b,c] / let [apa,iya,enggak]);
