@@ -1,0 +1,30 @@
+[
+   {
+      "id": 1,
+      "name": "Civic 2023",
+      "type": "sedan",
+      "brand": "honda",
+      "price": 35000000
+   },
+   {
+      "id": 2,
+      "name": "Box Car 2023",
+      "type": "truck",
+      "brand": "colt",
+      "price": 15000000
+   },
+   {
+      "id": 3,
+      "name": "Dai Rocky 2023",
+      "type": "suv",
+      "brand": "daihatsu",
+      "price": 35000000
+   },
+   {
+      "id": 4,
+      "name": "Jaguar",
+      "type": "sports",
+      "brand": "Macan",
+      "price": 40000000
+   }
+]
