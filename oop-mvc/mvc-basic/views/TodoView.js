@@ -1,3 +1,5 @@
+const TodoModel = require("../models/Todo");
+
 class TodoView {
   static help() {
     console.log("Command List: ");
@@ -9,7 +11,20 @@ class TodoView {
   }
 
   static list(todos) {
+    console.log("Todo List: ");
     console.log(todos);
+  }
+
+  static add(todos) {
+    TodoModel.add(todos);
+  }
+
+  static delete(todos) {
+    TodoModel.delete(todos);
+  }
+
+  static update(todos) {
+    TodoModel.update(todos);
   }
 
   static default() {

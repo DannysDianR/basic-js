@@ -17,14 +17,18 @@ class TodoController {
 
   static add(params) {
     //
+    // const todos = TodoModel.add(params);
+    TodoView.add(params);
   }
 
   static delete(params) {
     //
+    TodoView.delete(params);
   }
 
   static update(params) {
     //
+    TodoView.update(params);
   }
 
   static default() {

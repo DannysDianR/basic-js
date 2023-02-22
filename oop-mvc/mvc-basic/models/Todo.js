@@ -32,13 +32,45 @@ class Todo {
     return todos;
   }
 
-  static add(params) {}
+  static add(params) {
+    const todos = this.getTodos();
+    const [task] = params;
 
-  static delete(params) {}
+    let id = todos[todos.length - 1].id + 1;
 
-  static update(params) {}
+    todos.push(new Todo(id, task, false, new Date(), null));
 
-  static save() {}
+    this.save(todos);
+    console.log(todos);
+  }
+
+  static delete(id) {
+    let todos = this.getTodos();
+    todos = todos.filter((todo) => todo.id !== id);
+    this.save(todos);
+    console.log(todos);
+    console.log(`Task ${id} ini sudah dihapus ya :)`);
+  }
+
+  static update(id, task, status) {
+    let todos = this.getTodos();
+
+    todos = todos.map((todo) => {
+      if (id === id) {
+        todo.task = task;
+        todo.status = status;
+      }
+      this.save(todos);
+      return todo;
+    });
+    console.log(`Task no ${id} sudah diupdate ya`);
+  }
+
+  static save(todos) {
+    const todosString = JSON.stringify(todos, null, 3);
+
+    fs.writeFileSync("./data.json", todosString);
+  }
 }
 
 module.exports = Todo;
